@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Tetris
 {
@@ -9,6 +7,12 @@ namespace Tetris
         public int x;
         public int y;
         public char c;
+        public Point(int x, int y, char c)
+        {
+            this.x = x;
+            this.y = y;
+            this.c = c;
+        }
 
         public void Draw()
         {
