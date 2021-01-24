@@ -15,5 +15,21 @@ namespace Tetris
                 p.Draw();
             }
         }
+
+        public void Move(Direction direction)
+        {
+            foreach (Point point in points)
+            {
+                point.Move(direction);
+            }
+        }
+
+        public void Clear()
+        {
+            foreach (Point point in points)
+            {
+                point.Clear();
+            }
+        }
     }
 }
