@@ -6,7 +6,8 @@ namespace Tetris
 {
     public abstract class Figure
     {
-        public Point[] points = new Point[4];
+        const int LENGTH = 4;
+        public Point[] points = new Point[LENGTH];
 
         public void Draw()
         {
@@ -15,15 +16,48 @@ namespace Tetris
                 p.Draw();
             }
         }
-
-        public void Move(Direction direction)
+        internal void TryMove(Direction direction)
         {
-            foreach (Point point in points)
+            Clear();
+
+            var clone = Clone();
+            Move(clone, direction);
+
+            if (VerifyPosition(clone))
+                points = clone;
+
+            Draw();
+        }
+
+        private bool VerifyPosition(Point[] clone)
+        {
+            foreach (var p in clone)
             {
-                Clear();
-                point.Move(direction);
-                Draw();
+                if (p.x < 0 || p.y < 0 || p.x >= 40 || p.y >= 30)
+                    return false;
             }
+
+            return true;
+        }
+
+        private void Move(Point[] clone, Direction direction)
+        {
+            foreach (var p in clone)
+            {
+                p.Move(direction);
+            }
+        }
+
+        private Point[] Clone()
+        {
+            var newPoints = new Point[LENGTH];
+
+            for (int i = 0; i < LENGTH; i++)
+            {
+                newPoints[i] = new Point(points[i]);
+            }
+
+            return newPoints;
         }
 
         public void Clear()
@@ -35,5 +69,6 @@ namespace Tetris
         }
 
         public abstract void Rotate();
+
     }
 }

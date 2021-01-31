@@ -14,6 +14,13 @@ namespace Tetris
             this.symbol = symbol;
         }
 
+        public Point(Point point)
+        {
+            x = point.x;
+            y = point.y;
+            symbol = point.symbol;
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);

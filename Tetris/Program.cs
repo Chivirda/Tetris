@@ -28,13 +28,13 @@ namespace Tetris
             switch (key.Key)
             {
                 case ConsoleKey.LeftArrow:
-                    figure.Move(Direction.LEFT);
+                    figure.TryMove(Direction.LEFT);
                     break;
                 case ConsoleKey.RightArrow:
-                    figure.Move(Direction.RIGTH);
+                    figure.TryMove(Direction.RIGTH);
                     break;
                 case ConsoleKey.DownArrow:
-                    figure.Move(Direction.DOWN);
+                    figure.TryMove(Direction.DOWN);
                     break;
             }
         }
