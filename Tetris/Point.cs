@@ -25,6 +25,7 @@ namespace Tetris
         {
             Console.SetCursorPosition(x, y);
             Console.Write(symbol);
+            Console.CursorVisible = false;
         }
 
         internal void Move(Direction direction)
