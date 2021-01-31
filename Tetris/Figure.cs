@@ -20,7 +20,9 @@ namespace Tetris
         {
             foreach (Point point in points)
             {
+                Clear();
                 point.Move(direction);
+                Draw();
             }
         }
 

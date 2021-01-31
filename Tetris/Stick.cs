@@ -12,6 +12,7 @@ namespace Tetris
             {
                 points[i] = new Point(x, y + i, symbol);
             }
+            Draw();
         }
 
         public override void Rotate()

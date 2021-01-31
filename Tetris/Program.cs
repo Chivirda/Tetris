@@ -12,11 +12,31 @@ namespace Tetris
 
 
             FigureGenerator figureGenerator = new FigureGenerator('#');
-
             Figure figure = figureGenerator.GetNewFigure();
-            figure.Draw();
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    var key = Console.ReadKey();
+                    HandleKey(figure, key);
+                }
+            }
+        }
 
-            Console.ReadLine();
+        private static void HandleKey(Figure figure, ConsoleKeyInfo key)
+        {
+            switch (key.Key)
+            {
+                case ConsoleKey.LeftArrow:
+                    figure.Move(Direction.LEFT);
+                    break;
+                case ConsoleKey.RightArrow:
+                    figure.Move(Direction.RIGTH);
+                    break;
+                case ConsoleKey.DownArrow:
+                    figure.Move(Direction.DOWN);
+                    break;
+            }
         }
     }
 }
