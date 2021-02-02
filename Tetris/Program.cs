@@ -36,6 +36,9 @@ namespace Tetris
                 case ConsoleKey.DownArrow:
                     figure.TryMove(Direction.DOWN);
                     break;
+                case ConsoleKey.Spacebar:
+                    figure.Rotate();
+                    break;
             }
         }
     }

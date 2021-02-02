@@ -17,6 +17,7 @@ namespace Tetris
 
         public override void Rotate()
         {
+            Clear();
             if (points[0].x == points[1].x)
             {
                 SetHorizontal();
@@ -25,6 +26,7 @@ namespace Tetris
             {
                 SetVertical();
             }
+            Draw();
         }
 
         private void SetHorizontal()
