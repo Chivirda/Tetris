@@ -6,6 +6,8 @@ namespace Tetris
 {
     static class Field
     {
+        private static int _width = 40;
+        private static int _height = 30;
         public static int Width
         {
             get
@@ -33,7 +35,5 @@ namespace Tetris
             }
         }
 
-        private static int _width = 40;
-        private static int _height = 30;
     }
 }
