@@ -6,7 +6,7 @@ namespace Tetris
 {
     public class FigureGenerator
     {
-        private int _x = Field.WIDTH / 2;
+        private int _x = Field.Width / 2;
         private int _y = 0;
         private char _symbol;
 
