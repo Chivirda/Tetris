@@ -7,11 +7,11 @@ namespace Tetris
     public abstract class Figure
     {
         const int LENGTH = 4;
-        public Point[] points = new Point[LENGTH];
+        public Point[] Points = new Point[LENGTH];
 
         public void Draw()
         {
-            foreach (Point p in points)
+            foreach (Point p in Points)
             {
                 p.Draw();
             }
@@ -24,7 +24,7 @@ namespace Tetris
             Move(clone, direction);
 
             if (VerifyPosition(clone))
-                points = clone;
+                Points = clone;
 
             Draw();
         }
@@ -37,7 +37,7 @@ namespace Tetris
             Rotate(clone);
 
             if (VerifyPosition(clone))
-                points = clone;
+                Points = clone;
 
             Draw();
         }
@@ -67,7 +67,7 @@ namespace Tetris
 
             for (int i = 0; i < LENGTH; i++)
             {
-                newPoints[i] = new Point(points[i]);
+                newPoints[i] = new Point(Points[i]);
             }
 
             return newPoints;
@@ -75,7 +75,7 @@ namespace Tetris
 
         public void Clear()
         {
-            foreach (Point point in points)
+            foreach (Point point in Points)
             {
                 point.Clear();
             }

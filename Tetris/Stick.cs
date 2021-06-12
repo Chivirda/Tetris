@@ -8,9 +8,9 @@ namespace Tetris
     {
         public Stick (int x, int y, char symbol)
         {
-            for (int i = 0; i < points.Length; i++)
+            for (int i = 0; i < Points.Length; i++)
             {
-                points[i] = new Point(x, y + i, symbol);
+                Points[i] = new Point(x, y + i, symbol);
             }
             Draw();
         }
